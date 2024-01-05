@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import {
     Input,
@@ -54,7 +54,7 @@ export const SideDrawer = () => {
     const [loading, setLoading] = useState(false);
     const [loadingChat, setLoadingChat] = useState(false);
 
-    const history = useHistory();
+    const navigate = useNavigate();
     const toast = useToast();
 
     const handleSearch = async () => {
@@ -134,7 +134,7 @@ export const SideDrawer = () => {
     const logoutHandler = () => {
         localStorage.removeItem("userInfo");
         localStorage.removeItem("token");
-        history.push("/");
+        navigate("/");
     };
     return (
         <>

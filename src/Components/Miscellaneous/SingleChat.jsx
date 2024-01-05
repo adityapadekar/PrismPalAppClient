@@ -35,7 +35,14 @@ const ENDPOINT_URL = "http://localhost:8080";
 let socket, selectedChatCompare;
 
 export const SingleChat = ({ fetchAgain, setFetchAgain }) => {
-    const { user, token, selectedChat, setSelectedChat,notifications,setNotifications } = ChatState();
+    const {
+        user,
+        token,
+        selectedChat,
+        setSelectedChat,
+        notifications,
+        setNotifications,
+    } = ChatState();
 
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);

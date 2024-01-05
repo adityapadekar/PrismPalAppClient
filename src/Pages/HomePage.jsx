@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import {
     Container,
@@ -17,16 +17,16 @@ import { Login } from "../Components/Authentication/Login";
 import { SignUp } from "../Components/Authentication/SignUp";
 
 export const HomePage = () => {
-    const history = useHistory();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem("userInfo"));
         const token = localStorage.getItem("token");
 
         if (user && token) {
-            history.push("/chats");
+            navigate("/chats");
         }
-    }, [history]);
+    }, [navigate]);
     return (
         <>
             <Container maxW="xl" centerContent>

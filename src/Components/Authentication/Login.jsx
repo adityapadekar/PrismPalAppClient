@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import {
     FormControl,
@@ -25,7 +25,7 @@ export const Login = () => {
     const [password, setPassword] = useState();
 
     const toast = useToast();
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const submitHandler = async () => {
         setLoading(true);
@@ -54,7 +54,7 @@ export const Login = () => {
             setPassword("");
             setLoading(false);
 
-            history.go("/chats");
+            navigate("/chats");
         } catch (error) {
             setLoading(false);
             toast({
@@ -72,6 +72,7 @@ export const Login = () => {
             <FormControl id="username_or_email" isRequired>
                 <FormLabel>Username/Email</FormLabel>
                 <Input
+                    value={loginCredential}
                     type="text"
                     placeholder="Enter Username or Email"
                     onChange={(e) => setLoginCredential(e.target.value)}
@@ -81,6 +82,7 @@ export const Login = () => {
                 <FormLabel>Password</FormLabel>
                 <InputGroup>
                     <Input
+                        value={password}
                         type={show ? "text" : "password"}
                         placeholder="Enter Password"
                         onChange={(e) => setPassword(e.target.value)}

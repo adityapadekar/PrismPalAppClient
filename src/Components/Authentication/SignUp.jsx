@@ -104,7 +104,7 @@ export const SignUp = () => {
             setLoading(false);
             toast({
                 title: "Error Occured!",
-                description: error.response?.data.msg,
+                description: error.response.data.msg,
                 status: "error",
                 duration: 2000,
                 isClosable: true,
@@ -117,6 +117,7 @@ export const SignUp = () => {
             <FormControl id="name" isRequired>
                 <FormLabel>Name</FormLabel>
                 <Input
+                    value={name}
                     type="text"
                     placeholder="Enter Your Name"
                     onChange={(e) => setName(e.target.value)}
@@ -125,6 +126,7 @@ export const SignUp = () => {
             <FormControl id="username" isRequired>
                 <FormLabel>Username</FormLabel>
                 <Input
+                    value={username}
                     type="text"
                     placeholder="Enter Username"
                     onChange={(e) => setUsername(e.target.value)}
@@ -133,6 +135,7 @@ export const SignUp = () => {
             <FormControl id="email" isRequired>
                 <FormLabel>Email</FormLabel>
                 <Input
+                    value={email}
                     type="email"
                     placeholder="Enter Your Email"
                     onChange={(e) => setEmail(e.target.value)}
@@ -142,6 +145,7 @@ export const SignUp = () => {
                 <FormLabel>Password</FormLabel>
                 <InputGroup>
                     <Input
+                        value={password}
                         type={show ? "text" : "password"}
                         placeholder="Enter Password"
                         onChange={(e) => setPassword(e.target.value)}
@@ -161,6 +165,7 @@ export const SignUp = () => {
                 <FormLabel>Confirm Password</FormLabel>
                 <InputGroup size="md">
                     <Input
+                        value={confirmpassword}
                         type={show ? "text" : "password"}
                         placeholder="Confirm password"
                         onChange={(e) => setConfirmpassword(e.target.value)}
@@ -179,6 +184,7 @@ export const SignUp = () => {
             <FormControl id="pic">
                 <FormLabel>Upload your Picture</FormLabel>
                 <Input
+                    value={pic}
                     type="file"
                     padding={1.5}
                     accept="image/*"

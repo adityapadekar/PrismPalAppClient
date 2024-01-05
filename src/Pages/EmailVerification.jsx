@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import { Container, Button, Box, Text, useToast } from "@chakra-ui/react";
 
@@ -12,7 +12,7 @@ export const EmailVerification = () => {
 
     const { id, token } = useParams();
     const toast = useToast();
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const verifyEmail = async () => {
         try {
@@ -40,7 +40,7 @@ export const EmailVerification = () => {
     };
 
     const handleClick = () => {
-        history.push("/");
+        navigate("/");
     };
 
     useEffect(() => {

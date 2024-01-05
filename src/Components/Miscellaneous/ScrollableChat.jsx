@@ -61,7 +61,6 @@ export const ScrollableChat = ({ messages }) => {
                                             ? "bg-blue-100"
                                             : "bg-green-100"
                                     } rounded-2xl px-4 py-2 max-w-3/4 `}
-
                                     style={{
                                         marginLeft: isSameSenderMargin(
                                             messages,

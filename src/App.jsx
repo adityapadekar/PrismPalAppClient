@@ -1,4 +1,4 @@
-import { Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // import components
 import { HomePage } from "./Pages/HomePage";
@@ -9,12 +9,14 @@ function App() {
     return (
         <>
             <div className="w-full min-h-screen flex justify-center  blue_gradient">
-                <Route path="/" component={HomePage} exact />
-                <Route path="/chats" component={ChatPage} />
-                <Route
-                    path="/emailVerification/:id/:token"
-                    component={EmailVerification}
-                />
+                <Routes>
+                    <Route path="/" element={<HomePage />} exact />
+                    <Route path="/chats" element={<ChatPage />} />
+                    <Route
+                        path="/emailVerification/:id/:token"
+                        element={<EmailVerification />}
+                    />
+                </Routes>
             </div>
         </>
     );

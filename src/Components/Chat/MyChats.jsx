@@ -27,6 +27,7 @@ export const MyChats = ({ fetchAgain }) => {
                     Authorization: `Bearer ${token}`,
                 },
             });
+            console.log(result.data.result);
 
             setChats(result.data.result);
         } catch (error) {
