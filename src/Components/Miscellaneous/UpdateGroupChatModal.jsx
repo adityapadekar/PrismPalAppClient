@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import {
     IconButton,
     useDisclosure,
@@ -17,13 +16,9 @@ import {
     Spinner,
     useToast,
 } from "@chakra-ui/react";
-
 import { ViewIcon } from "@chakra-ui/icons";
-
 import { ChatState } from "../../Context/chatContextProvider";
-
 import api from "../../Api/api";
-
 import { UserBadgeItem } from "./UserBadgeItem";
 import { UserListItem } from "./UserListItem";
 

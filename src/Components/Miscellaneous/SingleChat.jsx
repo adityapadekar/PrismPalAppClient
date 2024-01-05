@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
-
 import io from "socket.io-client";
-
 import Lottie from "lottie-react";
-
 import {
     Box,
     Text,
@@ -13,24 +10,17 @@ import {
     FormControl,
     Input,
 } from "@chakra-ui/react";
-
 import { ArrowBackIcon } from "@chakra-ui/icons";
-
 import { ChatState } from "../../Context/chatContextProvider";
-
 import api from "../../Api/api";
-
 import { getSender, getSenderFull } from "../../Utils/chatLogics";
-
 import { ProfileModal } from "./ProfileModal";
-
 import { UpdateGroupChatModal } from "./UpdateGroupChatModal";
-
 import { ScrollableChat } from "./ScrollableChat";
-
 import typingAnimation from "../../Animations/typing.json";
 
-const ENDPOINT_URL = "http://localhost:8080";
+const ENDPOINT_URL = "https://prismpalappserver.onrender.com";
+// const ENDPOINT_URL = "http://localhost:8080";
 
 let socket, selectedChatCompare;
 

@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-
 import { Box } from "@chakra-ui/react";
-
 import { ChatState } from "../Context/chatContextProvider";
-
 import { SideDrawer } from "../Components/Miscellaneous/SideDrawer";
 import { MyChats } from "../Components/Chat/MyChats";
 import { ChatBox } from "../Components/Chat/ChatBox";
+
 export const ChatPage = () => {
     const { user, token } = ChatState();
 

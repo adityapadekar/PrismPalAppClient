@@ -1,6 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-
-// import components
 import { HomePage } from "./Pages/HomePage";
 import { ChatPage } from "./Pages/ChatPage";
 import { EmailVerification } from "./Pages/EmailVerification";

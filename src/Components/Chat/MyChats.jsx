@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from "react";
-
 import { Box, useToast, Button, Text, Stack } from "@chakra-ui/react";
-
 import { AddIcon } from "@chakra-ui/icons";
-
 import { ChatState } from "../../Context/chatContextProvider";
-
 import api from "../../Api/api";
-
 import { ChatLoading } from "../Utils/ChatLoading";
 import { GroupChatModal } from "../Miscellaneous/GroupChatModal";
-
 import { getSender } from "../../Utils/chatLogics";
 
 export const MyChats = ({ fetchAgain }) => {

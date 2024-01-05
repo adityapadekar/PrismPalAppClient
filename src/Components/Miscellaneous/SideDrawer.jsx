@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-
 import { useNavigate } from "react-router-dom";
-
 import {
     Input,
     Box,
@@ -24,17 +22,12 @@ import {
     Spinner,
     Badge,
 } from "@chakra-ui/react";
-
 import { SearchIcon, BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
-
 import { ChatState } from "../../Context/chatContextProvider";
-
 import api from "../../Api/api";
-
 import { ProfileModal } from "./ProfileModal";
 import { UserLoading } from "../Utils/UserLoading";
 import { UserListItem } from "./UserListItem";
-
 import { getSender } from "../../Utils/chatLogics";
 
 export const SideDrawer = () => {

@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Stack, Skeleton } from "@chakra-ui/react";
 
 export const UserLoading = () => {

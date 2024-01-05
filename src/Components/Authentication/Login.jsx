@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-
 import { useNavigate } from "react-router-dom";
-
 import {
     FormControl,
     FormLabel,
@@ -12,9 +10,7 @@ import {
     Button,
     useToast,
 } from "@chakra-ui/react";
-
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
-
 import api from "../../Api/api";
 
 export const Login = () => {

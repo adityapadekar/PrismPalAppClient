@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import {
     FormControl,
     FormLabel,
@@ -11,9 +10,7 @@ import {
     useToast,
     Text,
 } from "@chakra-ui/react";
-
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
-
 import api from "../../Api/api";
 import convertToBase64 from "../../Utils/convertToBase64";
 

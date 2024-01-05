@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import {
     Modal,
     ModalOverlay,
@@ -15,12 +14,9 @@ import {
     useToast,
     Box,
 } from "@chakra-ui/react";
-
 import { ChatState } from "../../Context/chatContextProvider";
-
 import { UserListItem } from "./UserListItem";
 import { UserBadgeItem } from "./UserBadgeItem";
-
 import api from "../../Api/api";
 
 export const GroupChatModal = ({ children }) => {
