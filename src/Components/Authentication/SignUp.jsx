@@ -102,10 +102,9 @@ export const SignUp = () => {
             setLoading(false);
         } catch (error) {
             setLoading(false);
-            console.log(error);
             toast({
                 title: "Error Occured!",
-                description: error?.response?.result.msg,
+                description: error.response?.data.msg,
                 status: "error",
                 duration: 2000,
                 isClosable: true,

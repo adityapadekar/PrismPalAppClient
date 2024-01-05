@@ -9,12 +9,11 @@ function App() {
     return (
         <>
             <div className="w-full min-h-screen flex justify-center  blue_gradient">
-                <Route path="/" component={HomePage} exact rel="noreferrer" />
-                <Route path="/chats" component={ChatPage} rel="noreferrer" />
+                <Route path="/" component={HomePage} exact />
+                <Route path="/chats" component={ChatPage} />
                 <Route
                     path="/emailVerification"
                     component={EmailVerification}
-                    rel="noreferrer"
                 />
             </div>
         </>
