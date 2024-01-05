@@ -50,6 +50,8 @@ export const Login = () => {
                 position: "top",
             });
 
+            setLoginCredential("");
+            setPassword("");
             setLoading(false);
 
             history.go("/chats");

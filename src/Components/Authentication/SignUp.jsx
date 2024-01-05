@@ -92,6 +92,12 @@ export const SignUp = () => {
                 position: "top",
             });
 
+            setName("");
+            setUsername("");
+            setEmail("");
+            setPassword("");
+            setConfirmpassword("");
+            setPic("");
             setSuccess(true);
             setLoading(false);
         } catch (error) {
