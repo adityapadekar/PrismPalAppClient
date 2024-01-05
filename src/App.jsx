@@ -12,7 +12,7 @@ function App() {
                 <Route path="/" component={HomePage} exact />
                 <Route path="/chats" component={ChatPage} />
                 <Route
-                    path="/emailVerification"
+                    path="/emailVerification/:id/:token"
                     component={EmailVerification}
                 />
             </div>

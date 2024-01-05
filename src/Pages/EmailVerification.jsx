@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 import { Container, Button, Box, Text, useToast } from "@chakra-ui/react";
 
@@ -10,14 +10,13 @@ export const EmailVerification = () => {
     const [verifying, setVerifying] = useState(true);
     const [error, setError] = useState(false);
 
-    const query = new URLSearchParams(window.location.search);
-    const token = query.get("token");
+    const { id, token } = useParams();
     const toast = useToast();
     const history = useHistory();
 
     const verifyEmail = async () => {
         try {
-            await api.get(`/user/email-verification/${token}`);
+            await api.get(`/user/email-verification/${id}/${token}`);
             toast({
                 title: "Email Verified",
                 status: "success",
