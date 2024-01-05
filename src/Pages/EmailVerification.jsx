@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Container, Button, Box, Text, useToast } from "@chakra-ui/react";
 import api from "../Api/api";
 
@@ -7,7 +7,9 @@ export const EmailVerification = () => {
     const [verifying, setVerifying] = useState(true);
     const [error, setError] = useState(false);
 
-    const { id, token } = useParams();
+    const query = new URLSearchParams(window.location.search);
+    const id = query.get("id");
+    const token = query.get("token");
     const toast = useToast();
     const navigate = useNavigate();
 

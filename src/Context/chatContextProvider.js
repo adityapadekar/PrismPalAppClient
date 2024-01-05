@@ -13,6 +13,10 @@ const ChatProvider = ({ children }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
+        const currentPage = window.location.href.split("/")[3].split("?")[0];
+        console.log(currentPage);
+        if (currentPage === "email-verification") return;
+
         const userInfo = JSON.parse(localStorage.getItem("userInfo"));
         const token = localStorage.getItem("token");
 

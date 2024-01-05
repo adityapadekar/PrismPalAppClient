@@ -11,7 +11,7 @@ function App() {
                     <Route path="/" element={<HomePage />} exact />
                     <Route path="/chats" element={<ChatPage />} />
                     <Route
-                        path="/emailVerification/:id/:token"
+                        path="/email-verification"
                         element={<EmailVerification />}
                     />
                 </Routes>
