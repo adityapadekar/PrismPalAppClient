@@ -12,7 +12,7 @@ function App() {
                 <Route path="/" component={HomePage} exact rel="noreferrer" />
                 <Route path="/chats" component={ChatPage} rel="noreferrer" />
                 <Route
-                    path="/emailVerification/:id/:token"
+                    path="/emailVerification"
                     component={EmailVerification}
                     rel="noreferrer"
                 />
