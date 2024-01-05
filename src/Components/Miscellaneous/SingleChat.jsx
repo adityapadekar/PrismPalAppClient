@@ -30,7 +30,7 @@ import { ScrollableChat } from "./ScrollableChat";
 
 import typingAnimation from "../../Animations/typing.json";
 
-const ENDPOINT_URL = "http://localhost:8080";
+const ENDPOINT_URL = "https://prismpalappserver.onrender.com";
 
 let socket, selectedChatCompare;
 
