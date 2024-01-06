@@ -8,14 +8,15 @@ export const EmailVerification = () => {
     const [error, setError] = useState(false);
 
     const query = new URLSearchParams(window.location.search);
-    const id = query.get("id");
     const token = query.get("token");
+
     const toast = useToast();
     const navigate = useNavigate();
 
     const verifyEmail = async () => {
+        setError(false);
         try {
-            await api.get(`/user/email-verification/${id}/${token}`);
+            await api.get(`/user/email-verification/${token}`);
             toast({
                 title: "Email Verified",
                 status: "success",

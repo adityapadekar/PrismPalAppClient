@@ -1,7 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import { HomePage } from "./Pages/HomePage";
 import { ChatPage } from "./Pages/ChatPage";
+import { PageNotFound } from "./Pages/PageNotFound";
 import { EmailVerification } from "./Pages/EmailVerification";
+import { ForgotPassword } from "./Pages/ForgotPassword";
+import { ResetPassword } from "./Pages/ResetPassword";
 
 function App() {
     return (
@@ -14,6 +17,12 @@ function App() {
                         path="/email-verification"
                         element={<EmailVerification />}
                     />
+                    <Route
+                        path="/forgot-password"
+                        element={<ForgotPassword />}
+                    />
+                    <Route path="/reset-password" element={<ResetPassword />} />
+                    <Route path="*" element={<PageNotFound />} />
                 </Routes>
             </div>
         </>

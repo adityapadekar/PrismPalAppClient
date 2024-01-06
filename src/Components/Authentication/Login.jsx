@@ -9,6 +9,8 @@ import {
     InputRightElement,
     Button,
     useToast,
+    HStack,
+    Text,
 } from "@chakra-ui/react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import api from "../../Api/api";
@@ -17,14 +19,25 @@ export const Login = () => {
     const [show, setShow] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    const [loginCredential, setLoginCredential] = useState();
-    const [password, setPassword] = useState();
+    const [loginCredential, setLoginCredential] = useState("");
+    const [password, setPassword] = useState("");
 
     const toast = useToast();
     const navigate = useNavigate();
 
     const submitHandler = async () => {
         setLoading(true);
+        if (!loginCredential || !password) {
+            toast({
+                title: "Please Fill all the Feilds",
+                status: "warning",
+                duration: 2000,
+                isClosable: true,
+                position: "top",
+            });
+            setLoading(false);
+            return;
+        }
         try {
             const response = await api.post("/user/login", {
                 loginCredential,
@@ -74,7 +87,7 @@ export const Login = () => {
                     onChange={(e) => setLoginCredential(e.target.value)}
                 ></Input>
             </FormControl>
-            <FormControl id="password" isRequired>
+            <FormControl id="login_password" isRequired>
                 <FormLabel>Password</FormLabel>
                 <InputGroup>
                     <Input
@@ -104,6 +117,28 @@ export const Login = () => {
             >
                 Login
             </Button>
+
+            <HStack justify="center">
+                <Button
+                    variant="text"
+                    size="sm"
+                    onClick={() => {
+                        navigate("/forgot-password");
+                    }}
+                >
+                    <Text
+                        sx={{
+                            textDecoration: "underline",
+                            transition: "all 0.3s ease",
+                            "&:hover": {
+                                transform: "scale(1.1)",
+                            },
+                        }}
+                    >
+                        Forgot password?
+                    </Text>
+                </Button>
+            </HStack>
         </VStack>
     );
 };

@@ -14,8 +14,12 @@ const ChatProvider = ({ children }) => {
 
     useEffect(() => {
         const currentPage = window.location.href.split("/")[3].split("?")[0];
-        console.log(currentPage);
-        if (currentPage === "email-verification") return;
+        // console.log(currentPage);
+        // if (
+        //     currentPage === "email-verification" ||
+        //     currentPage === "forgot-password"
+        // )
+        //     return;
 
         const userInfo = JSON.parse(localStorage.getItem("userInfo"));
         const token = localStorage.getItem("token");
@@ -23,7 +27,7 @@ const ChatProvider = ({ children }) => {
         setUser(userInfo);
         setToken(token);
 
-        if (!userInfo || !token) {
+        if (currentPage === "chats" && (!userInfo || !token)) {
             navigate("/");
         }
     }, [navigate]);

@@ -19,11 +19,11 @@ export const SignUp = () => {
     const [success, setSuccess] = useState(false);
 
     const [name, setName] = useState("");
-    const [username, setUsername] = useState();
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
-    const [confirmpassword, setConfirmpassword] = useState();
-    const [pic, setPic] = useState();
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmpassword, setConfirmpassword] = useState("");
+    const [pic, setPic] = useState("");
     const [loading, setLoading] = useState(false);
 
     const toast = useToast();
